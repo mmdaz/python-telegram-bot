@@ -21,6 +21,7 @@
 """This module contains an object that represents a Telegram Bot."""
 
 import functools
+
 try:
     import ujson as json
 except ImportError:
@@ -2446,6 +2447,7 @@ class Bot(TelegramObject):
                      start_parameter,
                      currency,
                      prices,
+                     additional_parameters=None,
                      photo_url=None,
                      photo_size=None,
                      photo_width=None,
@@ -2537,6 +2539,8 @@ class Bot(TelegramObject):
                 data['provider_data'] = provider_data
             else:
                 data['provider_data'] = json.dumps(provider_data)
+        if additional_parameters is not None:
+            data['additional_parameters'] = additional_parameters
         if photo_url is not None:
             data['photo_url'] = photo_url
         if photo_size is not None:

@@ -25,7 +25,7 @@ with codecs.open('README.rst', 'r', 'utf-8') as fd:
         code = compile(fh.read(), fn, 'exec')
         exec(code)
 
-    setup(name='python-telegram-bot',
+    setup(name='python-telegram-payment-bot',
           version=__version__,
           author='Leandro Toledo',
           author_email='devs@python-telegram-bot.org',
